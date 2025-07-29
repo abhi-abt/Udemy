@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.querySelector('.carousel-arrow.prev');
-    const nextBtn = document.querySelector('.carousel-arrow.next');
-    let current = 0;
+    const slides = document.querySelectorAll('.slides');
+    const prevBtn = document.querySelector('.slide-arrow.prev');
+    const nextBtn = document.querySelector('.slide-arrow.next');
+    let currentIndex = 0;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
@@ -11,14 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     prevBtn.addEventListener('click', () => {
-        current = (current - 1 + slides.length) % slides.length;
-        showSlide(current);
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
     });
 
     nextBtn.addEventListener('click', () => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
     });
 
-    showSlide(current);
+    // Initialize
+    showSlide(currentIndex);
 });

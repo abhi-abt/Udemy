@@ -106,15 +106,16 @@ main {
     /*border: 3px solid #73AD21;*/
 }
 
-.carousel-container {
+.banner {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
-    background: #f6f2ff;
+    background-color: #f6f2ff;
     border-radius: 10px;
+    margin-top: 20px;
 }
-.carousel-slide {
+.slides {
     position: absolute;
     top: 0;
     left: 0;
@@ -122,35 +123,36 @@ main {
     height: 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    z-index: 0;
 }
-.carousel-slide.active {
+.slides.active {
     opacity: 1;
     z-index: 1;
 }
-.carousel-slide img {
+.slides img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
-.carousel-content {
+.slide-content {
     position: absolute;
     top: 20%;
     left: 5%;
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 20px;
     border-radius: 10px;
     max-width: 40%;
+    color: #000;
 }
-.carousel-content h2 {
+.slide-content h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
-.carousel-content p {
+.slide-content p {
     margin-bottom: 15px;
 }
-.carousel-content button {
+.slide-content button {
     background-color: #5624d0;
     color: white;
     border: none;
@@ -158,7 +160,7 @@ main {
     border-radius: 5px;
     cursor: pointer;
 }
-.carousel-arrow {
+.slide-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -166,15 +168,15 @@ main {
     background: rgba(255, 255, 255, 0.9);
     border: none;
     border-radius: 50%;
-    padding: 15px;
+    padding: 10px 15px;
     cursor: pointer;
     z-index: 2;
 }
-.carousel-arrow.prev {
-    left: 15px;
+.slide-arrow.prev {
+    left: 20px;
 }
-.carousel-arrow.next {
-    right: 15px;
+.slide-arrow.next {
+    right: 20px;
 }
 
 .section1 {
@@ -335,8 +337,7 @@ main {
     margin-top: 30px;
 }
 
-
-.footer {
+footer {
     background-color: #1c1d2a;
     color: white;
     font-size: 14px;
